@@ -1,4 +1,5 @@
-
+# Components:
+GalleryItem - stateless functional component that returns a li imgae using props passed to it from the Gallery component.
 
 # Getting Started with Create React App
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
-  Route,
-  Switch,
+  // Route,
+  // Switch,
   BrowserRouter
 } from 'react-router-dom'
 import './index.css'
@@ -15,25 +15,12 @@ class App extends Component {
     super(props)
     this.state = {
       photos: [],
-      query: 'javascript',
-      catPhotos: [],
-      dogPhotos: [],
-      birdPhotos: []
+      query: ''
     }
   }
 
   componentDidMount () {
-    this.performSearch()
-
-    // fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=cat&per_page=24&format=json&nojsoncallback=1`)
-    //   .then(response => response.json())
-    //   .then(responseData => {
-    //     const photos = responseData.photos.photo
-    //     this.setState({
-    //       catPhotos: photos
-    //     })
-    //   })
-    //   .catch(err => console.log('Error fetching cat photos', err))
+    this.performSearch('computer')
   }
 
   performSearch = (query = this.state.query) => {
@@ -53,12 +40,11 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">
+          <p>{this.state.query}</p>
           <SearchForm onSearch={this.performSearch} />
-          <Nav />
-          <Switch>
-            <Route exact path="/" render={() => <Gallery data={this.state.photos} />} />
-            {/* <Route path="/cats" render={() => <Gallery data={this.state.catPhotos}/> } /> */}
-          </Switch>
+          <Nav performSearch={this.performSearch}/>
+          <Gallery data={this.state.photos}/>
+
         </div>
       </BrowserRouter>
     )
