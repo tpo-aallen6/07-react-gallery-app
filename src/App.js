@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {
   Route,
   Switch,
-  BrowserRouter
+  BrowserRouter,
+  Redirect
 } from 'react-router-dom'
 import './index.css'
 import apiKey from './config'
@@ -47,9 +48,10 @@ class App extends Component {
       <BrowserRouter>
         <div className="container">
           <Switch>
-            {/* <Route exact path="/" render={() => <Gallery data={this.state.photos} />} /> */}
+            <Route exact path="/" >
+              <Redirect to="/search/cats"/> 
+            </Route>
             <Route path="/search/:query" >
-              <p>{this.state.query}</p> {/* delete this line */}
               <SearchForm onSearch={this.performSearch} />
               <Nav performSearch={this.performSearch} />
               <Gallery data={this.state.photos} />
