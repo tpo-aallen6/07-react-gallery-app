@@ -36,7 +36,7 @@ const Gallery = (props) => {
       // }
       })
       .catch(err => console.log('Error fetching data', err))
-  }, [])
+  }, [props])
 
   return (
     <div className='photo-container'>

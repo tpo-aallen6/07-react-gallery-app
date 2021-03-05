@@ -13,16 +13,21 @@ import NotFound from './components/NotFound'
 import config from './config'
 
 class App extends Component {
+  constructor () {
+    super()
+    this.categories = ['cats', 'dogs', 'birds']
+  }
+
   render () {
     return (
       <BrowserRouter>
 
         <div className="container">
           {/* <SearchForm /> */}
-          <Nav />
+          <Nav categories={this.categories} />
           <Switch>
             <Route exact path="/" >
-              <Redirect to="/search/cats"/>
+              <Redirect to={`/search/${this.categories[0]}`} />
             </Route>
             <Route exact path='/search/:query' render={(match) => <Gallery searchTerm={match.match.params.query} apiKey={config.flickrApiKey} />} />
             <Route component={NotFound} />
