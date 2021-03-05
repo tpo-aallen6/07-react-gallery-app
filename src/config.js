@@ -1,3 +1,3 @@
-const apiKey = 'c77028d604f336d3e2f81deed7245239'
+const apiKey = '5814ae69a449672ef375b9ba4226e59c'
 
 export default apiKey

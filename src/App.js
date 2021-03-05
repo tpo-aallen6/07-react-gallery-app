@@ -46,18 +46,18 @@ class App extends Component {
   render () {
     return (
       <BrowserRouter>
+      
         <div className="container">
+          <SearchForm onSearch={this.performSearch} />
+          <Nav performSearch={this.performSearch} />
           <Switch>
             <Route exact path="/" >
               <Redirect to="/search/cats"/> 
             </Route>
-            <Route path="/search/:query" >
-              <SearchForm onSearch={this.performSearch} />
-              <Nav performSearch={this.performSearch} />
-              <Gallery data={this.state.photos} />
-            </Route>
+            <Route exact path='/search/:query' render={(match) => <Gallery data={this.state.photos} urlData={match} />}  />
             <Route component={NotFound} />
           </Switch>
+          
         </div>
       </BrowserRouter>
     )
