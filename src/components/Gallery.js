@@ -6,6 +6,8 @@ const Gallery = (props) => {
   const results = props.data
   let pictures
   let header
+  console.log(props.urlData)
+  console.log(props.urlData.match.params.query)
 
   if (results.length > 0) {
     pictures = results.map(picture =>
