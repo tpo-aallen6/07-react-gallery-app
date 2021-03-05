@@ -18,13 +18,13 @@ class App extends Component {
       <BrowserRouter>
 
         <div className="container">
-          <SearchForm />
+          {/* <SearchForm /> */}
           <Nav />
           <Switch>
             <Route exact path="/" >
               <Redirect to="/search/cats"/>
             </Route>
-            <Route exact path='/search/:query' render={(match) => <Gallery searchTerm={match} key={config.flickrApiKey} />} />
+            <Route exact path='/search/:query' render={(match) => <Gallery searchTerm={match.match.params.query} apiKey={config.flickrApiKey} />} />
             <Route component={NotFound} />
           </Switch>
 

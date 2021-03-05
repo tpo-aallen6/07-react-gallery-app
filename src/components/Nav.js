@@ -12,8 +12,8 @@ const Nav = (props) => {
   // }
 
   const search = function (e) {
-    const query = e.target.innerText.toLowerCase()
-    props.performSearch(query)
+    // const query = e.target.innerText.toLowerCase()
+    // props.performSearch(query)
   }
 
   return (
