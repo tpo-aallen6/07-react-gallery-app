@@ -1,8 +1,8 @@
 import React from 'react'
 
-const PageNotFound = () => {
+function PageNotFound () {
   return (
-    <p>Chumbawumba not found. Please check your chumbawumbas.</p>
+    <p>Chumbawumba not found!?!?! Please check your chumbawumbas.</p>
   )
 }
 
