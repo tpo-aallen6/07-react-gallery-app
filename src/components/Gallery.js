@@ -19,14 +19,14 @@ const Gallery = (props) => {
     <div className='photo-container'>
       <ul>
         {images.map(item => (
-           <GalleryItem
-             title={item.title}
-             server={item.server}
-             secret={item.secret}
-             id={item.id}
-             key={item.id}
-            />
-         ))}​​
+          <GalleryItem
+            title={item.title}
+            server={item.server}
+            secret={item.secret}
+            id={item.id}
+            key={item.id}
+          />
+        ))}
       </ul>
     </div>
   )
