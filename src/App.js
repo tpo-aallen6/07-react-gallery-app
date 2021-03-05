@@ -23,7 +23,7 @@ class App extends Component {
       <BrowserRouter>
 
         <div className="container">
-          {/* <SearchForm /> */}
+          <SearchForm />
           <Nav categories={this.categories} />
           <Switch>
             <Route exact path="/" >
