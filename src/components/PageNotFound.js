@@ -2,7 +2,7 @@ import React from 'react'
 
 function PageNotFound () {
   return (
-    <p>Chumbawumba not found!?!?! Please check your chumbawumbas.</p>
+    <p>Page not found!?!?! Please try again.</p>
   )
 }
 

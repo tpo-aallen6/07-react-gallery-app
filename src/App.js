@@ -28,7 +28,7 @@ class App extends Component {
             <Route exact path='/'>
               <Redirect to={`/search/${this.defaultCategories[0]}`} />
             </Route>
-            <Route exact path='/search/:query' render={(match) => <Gallery searchTerm={match.match.params.query} apiKey={config.flickrApiKey} />} />
+            <Route exact path='/search/:query' render={(match) => <Gallery searchTerm={match.match.params.query} apiKey={config} />} />
             <Route component={PageNotFound} />
           </Switch>
         </div>
