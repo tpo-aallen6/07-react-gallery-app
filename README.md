@@ -1,73 +1,29 @@
-# Components:
-GalleryItem - stateless functional component that returns a li imgae using props passed to it from the Gallery component.
+# React Gallery App
 
-# Getting Started with Create React App
+A project that demonstrates our ability to create single-page web applications (SPA) using the popular [React](https://reactjs.org/) framework.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application submits the specified search term to Flickr, and displays the first 24 matching images returned by that service. If no images are returned, then a message indicating this is displayed.
 
-## Available Scripts
+## Basic Structure
 
-In the project directory, you can run:
+This app contains the following components:
 
-### `npm start`
+* _SearchForm_ - an input field for entering a custom search term
+* _Nav_ - links to pre-defined search terms ("categories")
+* _Gallery_ - the container that displays the matching images (by means of one or more _GalleryItem_ components)
+* _PageNotFound_ - rendered when the path entered into the address bar is not recognized/not valid
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Configuration
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+In order to run this application, you must create a file named `config.json` in the `src` folder. This file must export a single `String` value that is [a valid Flickr API key](https://www.flickr.com/services/api/keys/).
 
-### `npm test`
+For example:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```js
+const key = 'YOUR_API_KEY'
+export default key
+```
 
-### `npm run build`
+## Launching
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Open a command prompt in the same directory as `package.json` and enter `npm start`. This will transpile the code, start a local web server, and launch the SPA in your default web browser.
